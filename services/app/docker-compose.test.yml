@@ -7,6 +7,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.production
-    command: bin/rails test
+    command: make test
     depends_on:
       - db
