@@ -1,0 +1,3 @@
+app_run_user: ubuntu
+app_run_user_home: /home/ubuntu
+app_env_file: "{{ app_run_user_home }}/.env"
