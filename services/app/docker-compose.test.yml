@@ -4,13 +4,13 @@ services:
   db:
     image: postgres
     environment:
-      POSTGRES_USER: "${DB_USERNAME}"
+      POSTGRES_USER: app
   sut:
     build:
       context: .
       dockerfile: Dockerfile.production
     command: make test
     environment:
-      DB_USERNAME: "${DB_USERNAME}"
+      - RAILS_MASTER_KEY
     depends_on:
       - db
