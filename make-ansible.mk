@@ -1,3 +1,6 @@
+ansible-deps-install:
+	ansible-galaxy install -r requirements.yml
+
 ansible-vaults-encrypt:
 	ansible-vault encrypt ansible/development/group_vars/all/vault.yml
 	ansible-vault encrypt ansible/group_vars/all/vault.yml
