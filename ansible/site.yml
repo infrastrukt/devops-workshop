@@ -34,24 +34,9 @@
         dest: "{{ app_env_file }}"
       tags: env
 
-    - name: app container
-      docker_container:
-        name: app
-        image: lazycoder/workshop-devops-app
-        state: present
-
-    - name: nginx container
-      docker_container:
-        name: nginx
-        image: lazycoder/workshop-devops-nginx
-        state: present
-
     - name: create docker network
       docker_network:
         name: app_nginx_network
-        connected:
-          - app
-          - nginx
 
   post_tasks:
 
