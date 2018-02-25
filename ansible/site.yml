@@ -20,7 +20,7 @@
         shell: update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8 LANGUAGE=en_US.UTF-8
         tags: [locale]
 
-      - meta: reset_connection
+      # - meta: reset_connection
     - pip:
         name: docker
       become: yes
@@ -32,7 +32,7 @@
 
     - template:
         src: environment.j2
-        dest: "{{ app_env_file }}"
+        dest: "{{ devops_demo_env_file }}"
       tags: env
 
     - name: create docker network
@@ -42,9 +42,9 @@
   post_tasks:
 
     - user:
-        name: "{{ app_run_user }}"
+        name: "{{ devops_demo_run_user }}"
         groups: docker
         append: yes
       become: yes
 
-    - meta: reset_connection
+    # - meta: reset_connection

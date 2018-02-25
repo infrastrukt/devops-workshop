@@ -1,2 +1,12 @@
-rails_log_to_stdout: "true"
 ansible_python_interpreter: "/usr/bin/env python3"
+
+devops_demo_rails_log_to_stdout: true
+
+devops_demo_image_name: "lazycoder/workshop-devops-app"
+devops_demo_nginx_image_name: "lazycoder/workshop-devops-nginx"
+devops_demo_port: 8080
+devops_demo_server_name: temp.tabsqueeze.com
+devops_demo_aws_region: us-east-1
+
+docker_install_compose: no
+docker_package_state: latest
