@@ -35,12 +35,13 @@
     - name: run migrations
       docker_container:
         recreate: yes
-        detach: no
         name: devops-demo-migrations
         command: "bin/rails db:migrate"
         image: "{{ devops_demo_image_name }}:{{ devops_demo_image_tag }}"
         state: started
         env_file: "{{ devops_demo_env_file }}"
+        env:
+          RAILS_ENV: production
         volumes:
           - "/tmp:/tmp"
           - "/var/tmp:/var/tmp"

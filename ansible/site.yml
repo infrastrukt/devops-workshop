@@ -37,7 +37,7 @@
 
     - name: create docker network
       docker_network:
-        name: app_nginx_network
+        name: "{{ devops_demo_docker_network_name }}"
 
   post_tasks:
 
